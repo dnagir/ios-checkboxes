@@ -1,0 +1,10 @@
+.bundle/
+log/*.log
+pkg/
+spec/dummy/db/*.sqlite3
+spec/dummy/log/*.log
+spec/dummy/tmp/
+db/*.sqlite3
+log/*.log
+tmp/
+*.swp
