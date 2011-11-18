@@ -20,5 +20,5 @@ Gem::Specification.new do |s|
   s.add_dependency "sass-rails"
   s.add_dependency "compass", ">= 0.12.alpha.1"
 
-  s.add_development_dependency "sqlite3"
+  s.add_development_dependency "rspec-rails"
 end

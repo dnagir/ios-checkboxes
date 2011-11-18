@@ -48,6 +48,8 @@ module Dummy
     # Our specs are outside of the dummy app, so we need to tell Sprockets where those are
     config.assets.paths << File.join(Rails.root, "../", "javascripts")
 
+    config.serve_static_assets = true
+
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
   end
