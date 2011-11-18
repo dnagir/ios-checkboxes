@@ -44,7 +44,7 @@ Help
 ========================================
 
 - Report issues on [Github](https://github.com/dnagir/ios-checkboxes/issues).
-- Shout at me in Twitter - [@dnagir](http://twitter.com/dangir)
+- Shout at me in Twitter - [@dnagir](http://twitter.com/dnagir)
 
 
 Credits
