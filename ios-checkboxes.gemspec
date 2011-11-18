@@ -7,14 +7,15 @@ require "ios-checkboxes/version"
 Gem::Specification.new do |s|
   s.name        = "ios-checkboxes"
   s.version     = IosCheckboxes::VERSION
-  s.authors     = ["TODO: Your name"]
-  s.email       = ["TODO: Your email"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of IosCheckboxes."
-  s.description = "TODO: Description of IosCheckboxes."
+  s.authors     = ["Dmytrii Nagirniak, Thomas Reynolds"]
+  s.email       = ["dnagir@gmail.com"]
+  s.homepage    = "https://github.com/dnagir/ios-checkboxes"
+  s.summary     = "iOS checkboxes for Rails"
+  s.description = "Easily convert your checkboxes into iPhone style On/Off buttons. Use with Rails 3.1 Assets Pipeline."
 
-  s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
-  s.test_files = Dir["test/**/*"]
+  s.files         = `git ls-files`.split("\n")
+  s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
+  s.require_paths = ["lib"]
 
   s.add_dependency "rails", "~> 3.1.2"
   s.add_dependency "sass-rails"
