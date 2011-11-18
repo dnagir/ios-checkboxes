@@ -24,6 +24,15 @@ This will import all the default styling for the iOS checkboxes.
 You may choose not to use it and write the styling from scratch. In that case just skip this step.
 
 
+After you have all the ingridients in place you can convert your checkboxes into "On/Off" buttons
+with this JavaScript snipper:
+
+```javascript
+$(function(){
+  $("input:checkbox").iphoneStyle();
+});
+```
+
 Development
 ========================================
 
