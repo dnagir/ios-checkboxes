@@ -11,17 +11,12 @@ Usage
 ========================================
 
 Add `//=require ios-checkboxes` to your `app/assets/javascripts/application.js`.
+This will require jquery automaticaly, so make sure you gem `jquery-rails` in the Gemfile.
 
-Then create a file `app/assets/stylesheets/ios-checkboxes.css.sass` (or just open an existing `.sass` file)
-and add the following:
+Also make sure you add the stylesheets to your `application.css`.
+Just `require ios-checkboxes` to get the default styling.
 
-```
-@import "ios-checkboxes"
-+iphone-style-defaults
-```
-
-This will import all the default styling for the iOS checkboxes.
-You may choose not to use it and write the styling from scratch. In that case just skip this step.
+You may choose not to use it and write the styling from scratch. In that case just don't add the iox-checkboxes to the stylesheet manifest.
 
 
 After you have all the ingridients in place you can convert your checkboxes into "On/Off" buttons
