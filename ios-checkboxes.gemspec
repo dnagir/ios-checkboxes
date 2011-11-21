@@ -14,7 +14,7 @@ Gem::Specification.new do |s|
   s.description = "Easily convert your checkboxes into iPhone style On/Off buttons. Use with Rails 3.1 Assets Pipeline."
 
   s.files         = `git ls-files`.split("\n")
-  s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
+  s.test_files    = `git ls-files -- {test,spec,features,build}/*`.split("\n")
   s.require_paths = ["lib"]
 
   s.add_dependency "rails", "~> 3.1.2"
