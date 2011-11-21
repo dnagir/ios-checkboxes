@@ -2,6 +2,9 @@
 
 $iphone-style-mode: "cross-browser"
 $iphone-style-font: "Helvetica Neue", Arial, Helvetica, sans-serif
+$iphone-style-height: 27px
+$iphone-style-font-size: 17x
+$iphone-style-images-path: 'ios-checkboxes'
 
 =iphone-style-defaults($selector-prefix: "iPhoneCheck")
   .#{$selector-prefix}Container
@@ -37,7 +40,7 @@ $iphone-style-font: "Helvetica Neue", Arial, Helvetica, sans-serif
 
 =iphone-style-container
   position: relative
-  height: 27px
+  height: $iphone-style-height
   cursor: pointer
   overflow: hidden
   input
@@ -47,13 +50,13 @@ $iphone-style-font: "Helvetica Neue", Arial, Helvetica, sans-serif
     +opacity(0)
   label
     white-space: nowrap
-    font-size: 17px
-    line-height: 17px
+    font-size: $iphone-style-font-size
+    line-height: $iphone-style-font-size
     font-weight: bold
     font-family: $iphone-style-font
     cursor: pointer
     display: block
-    height: 27px
+    height: $iphone-style-height
     position: absolute
     width: auto
     top: 0
@@ -62,7 +65,7 @@ $iphone-style-font: "Helvetica Neue", Arial, Helvetica, sans-serif
 
 =iphone-style-label-on
   color: #fff
-  background: image-url("ios-checkboxes/on.png") no-repeat
+  background: image-url("#{$iphone-style-images-path}/on.png") no-repeat
   text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.6)
   left: 0
   padding-top: 5px
@@ -71,7 +74,7 @@ $iphone-style-font: "Helvetica Neue", Arial, Helvetica, sans-serif
 
 =iphone-style-label-off
   color: #8B8B8B
-  background: image-url("ios-checkboxes/off.png") no-repeat right 0
+  background: image-url("#{$iphone-style-images-path}/off.png") no-repeat right 0
   text-shadow: 0px 0px 2px rgba(255, 255, 255, 0.6)
   text-align: right
   right: 0
@@ -80,22 +83,22 @@ $iphone-style-font: "Helvetica Neue", Arial, Helvetica, sans-serif
 
 =iphone-style-handle
   display: block
-  height: 27px
+  height: $iphone-style-height
   cursor: pointer
   position: absolute
   top: 0
   left: 0
   width: 0
-  background: image-url("ios-checkboxes/slider_left.png") no-repeat
+  background: image-url("#{$iphone-style-images-path}/slider_left.png") no-repeat
   padding-left: 3px
 
 =iphone-style-handle-right
   height: 100%
   width: 100%
   padding-right: 3px
-  background: image-url("ios-checkboxes/slider_right.png") no-repeat right 0
+  background: image-url("#{$iphone-style-images-path}/slider_right.png") no-repeat right 0
 
 =iphone-style-handle-center
   height: 100%
   width: 100%
-  background: image-url("ios-checkboxes/slider_center.png")
+  background: image-url("#{$iphone-style-images-path}/slider_center.png")

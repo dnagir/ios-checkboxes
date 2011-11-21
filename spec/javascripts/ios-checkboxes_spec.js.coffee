@@ -2,8 +2,8 @@
 
 describe "iOS Checkboxes", ->
 
-  iphonify = ->
-    setFixtures "<input id='box' type='checkbox' />"
+  iphonify = (rootClass='') ->
+    setFixtures "<div class='#{rootClass}'>  <input id='box' type='checkbox' />  </div>"
     check = $("#box")
     check.iphoneStyle()
     check.parent()
@@ -23,3 +23,14 @@ describe "iOS Checkboxes", ->
     expect(wrap.css 'height')   .toBe '27px'
     expect(wrap.css 'position') .toBe 'relative'
     expect(wrap.css 'cursor')   .toBe 'pointer'
+    expect(wrap.find('.iPhoneCheckHandle').css 'background-image').toMatch /ios-checkboxes/
+
+  it "should allow customizing the styles", ->
+    wrap = iphonify('custom')
+    label = wrap.find('label')
+    handle = wrap.find('.iPhoneCheckHandle')
+    expect(wrap.css   'height')         .toBe '33px'
+    expect(label.css  'height')         .toBe '33px'
+    expect(label.css  'line-height')    .toBe '30px'
+    expect(label.css  'font-size')      .toBe '30px'
+    expect(handle.css 'background-image') .toMatch /custom-path/
