@@ -61,7 +61,7 @@ $iphone-style-height: 33px // Default = 27px
 $iphone-style-font-size: 30px // Default = 17px
 $iphone-style-images-path: 'custom-path-to-images' // Default = ios-checkboxes
 
-+iphone-style # This includes the actual styles with customised values
++iphone-style // This includes the actual styles with customised values
 
 // You can also override the styles for sub-selectors
 .huge
