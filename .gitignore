@@ -10,5 +10,3 @@ log/*.log
 tmp/
 .sass-cache/
 *.swp
-build/output/**/*.yml
-build/output/**/*.gz
