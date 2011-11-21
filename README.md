@@ -30,6 +30,60 @@ $(function(){
 });
 ```
 
+Using as a standalone
+========================================
+
+Go to the `build/output` directory and download its content.
+Put it content under your server root.
+Make sure you reference the JavaScript and CSS files properly.
+
+Don't reference it as 'assets/ios-checkboxes.js', instead use the full file name from the download
+(it will change with time): `assets/ios-checkboxes-d0bbaf0b834d61ddccf7510739596dd2.js`
+
+The same applies to CSS, but you don't need to do anything for images.
+
+The use of the "digest" appended to the end of file ensures that your users will have the most recent version of the files (cashe buster).
+
+
+Customisation
+========================================
+
+If the defaut stylesheet doesn't fit your design, you can customize it.
+
+First, add a `.css.sass` file to your application:
+
+```sass
+// app/assets/stylesheets/iphone.css.sass
+@import "./ios-checkboxes/mixins"
+
+// This will change the default for everything
+$iphone-style-height: 33px // Default = 27px
+$iphone-style-font-size: 30px // Default = 17px
+$iphone-style-images-path: 'custom-path-to-images' // Default = ios-checkboxes
+
++iphone-style # This includes the actual styles with customised values
+
+// You can also override the styles for sub-selectors
+.huge
+  $iphone-style-height: 60px
+  $iphone-style-font-size: 40px
+  $iphone-style-images-path: 'hude-images'
+  +iphone-style
+```
+
+If you modify the `$iphone-style-images-path` then you have to provide a (Sprockets) directory with the following files:
+
+```
+off.png
+on.png
+slider.png
+slider_center.png
+slider_left.png
+slider_right.png
+```
+
+
+
 Development
 ========================================
 
