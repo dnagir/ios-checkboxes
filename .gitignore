@@ -4,8 +4,11 @@ pkg/
 spec/dummy/db/*.sqlite3
 spec/dummy/log/*.log
 spec/dummy/tmp/
+spec/dummy/public/assets
 db/*.sqlite3
 log/*.log
 tmp/
 .sass-cache/
 *.swp
+build/output/**/*.yml
+build/output/**/*.gz
