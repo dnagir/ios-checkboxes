@@ -96,6 +96,8 @@ bundle rspec spec
 # Now go to http://localhost:3000/jasmine to run the specs
 ```
 
+To build the standalone assets: `sh build/build.sh`.
+
 Help
 ========================================
 
