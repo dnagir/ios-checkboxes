@@ -9,7 +9,7 @@ Install
 Add `gem 'ios-checkboxes'` to your Gemfile and run `bundle install`
 
 
-Usage
+Using with Rails 3.1
 ========================================
 
 Add `//=require ios-checkboxes` to your `app/assets/javascripts/application.js`.
@@ -48,15 +48,19 @@ The use of the "digest" appended to the end of file ensures that your users will
 Customisation
 ========================================
 
+Basic
+----------------------------------------
+
 If the defaut stylesheet doesn't fit your design, you can customize it.
 
-First, add a `.css.sass` file to your application:
+Add a `.css.sass` file to your application and requer it.
+The basic example may look like this:
 
 ```sass
 // app/assets/stylesheets/iphone.css.sass
-@import "./ios-checkboxes/mixins"
+@import "ios-checkboxes/mixins"
 
-// This will change the default for everything
+// This will change the defaults for everything
 $iphone-style-height: 33px // Default = 27px
 $iphone-style-font-size: 30px // Default = 17px
 $iphone-style-images-path: 'custom-path-to-images' // Default = ios-checkboxes
@@ -71,6 +75,7 @@ $iphone-style-images-path: 'custom-path-to-images' // Default = ios-checkboxes
   +iphone-style
 ```
 
+
 If you modify the `$iphone-style-images-path` then you have to provide a (Sprockets) directory with the following files:
 
 ```
@@ -80,6 +85,86 @@ slider.png
 slider_center.png
 slider_left.png
 slider_right.png
+```
+
+Advanced
+----------------------------------------
+
+If overriding existing variables doesn't work for you, then you can customise using the hooks provided.
+For example, this creates the iOS 5 On/Off buttons (round ones) and use no images whatsoever.
+
+```sass
+@import "compass/css3/images"
+@import "compass/css3/border-radius"
+@import "compass/css3/box-shadow"
+@import "ios-checkboxes/mixins"
+
+
+// Override the ios-checboxes defaults
+// Empty string disables the property (can't be applied to height)
+$iphone-style-font: ''
+$iphone-style-height: 1.8em
+$iphone-style-font-size: ''
+$iphone-style-images-path: ''
+
+// Define additional variables
+$onoff-active: #136785
+$onoff-active-alt: #1c94bf
+$onoff-back: #bfbfbf
+
+$onoff-radius: $iphone-style-height / 2
+
+=iphone-style-visual-container
+  width: 6 * $onoff-radius
+  // We add borders inside, so need to increse the padding
+  padding: 1px
+
+
+=iphone-style-label
+  +border-radius($onoff-radius)
+  text-align: center
+  text-transform: uppercase
+
+=iphone-style-label-on
+  left: 0
+  padding-right: $onoff-radius
+  border: 1px solid $onoff-active
+  color: white
+  background: $onoff-active
+  +background-image(linear-gradient(top, $onoff-active, $onoff-active-alt))
+  +box-shadow($onoff-back 0 0 2px inset)
+  // Don't squeeze the On button too much to make sure the handle overlaps fully with it
+  // this way it can interset with handler
+  min-width: $onoff-radius*0.9
+    
+
+=iphone-style-label-off
+  left: $onoff-radius
+  margin-left: -$onoff-radius
+  text-align: right
+  border: 1px solid $onoff-back
+  color: #666666
+  background: $onoff-back
+  +background-image(linear-gradient(top, $onoff-back, white))
+  span
+    padding-right: $onoff-radius
+
+
+=iphone-style-visual-handle
+  width: $onoff-radius * 2
+  height: $onoff-radius * 2
+  +border-radius($onoff-radius)
+  background: $onoff-back
+  border: 1px solid $onoff-back
+  +background-image(linear-gradient(top, $onoff-back, white))
+
+// Additional hooks that you can override are:
+// =iphone-style-visual-handle-right
+// =iphone-style-visual-handle-center
+
+
+// And finally emit the stylesheet
++iphone-style
 ```
 
 
