@@ -1,9 +1,10 @@
 @import "compass/css3/opacity"
 
+
 $iphone-style-mode: "cross-browser"
 $iphone-style-font: "Helvetica Neue", Arial, Helvetica, sans-serif
 $iphone-style-height: 27px
-$iphone-style-font-size: 17x
+$iphone-style-font-size: 17px
 $iphone-style-images-path: 'ios-checkboxes'
 
 =iphone-style($selector-prefix: "iPhoneCheck")
@@ -38,6 +39,12 @@ $iphone-style-images-path: 'ios-checkboxes'
 =iphone-style-disabled
   +opacity(0.5)
 
+=iphone-style-label
+  padding-top: 5px
+  font-weight: bold
+
+=iphone-style-visual-container
+
 =iphone-style-container
   position: relative
   height: $iphone-style-height
@@ -50,22 +57,25 @@ $iphone-style-images-path: 'ios-checkboxes'
     +opacity(0)
   label
     white-space: nowrap
-    font-size: $iphone-style-font-size
-    line-height: $iphone-style-font-size
-    font-weight: bold
-    font-family: $iphone-style-font
+    @if $iphone-style-font-size != ''
+      font-size: $iphone-style-font-size
+      line-height: $iphone-style-font-size
+    @if $iphone-style-font != ''
+      font-family: $iphone-style-font
     cursor: pointer
     display: block
     height: $iphone-style-height
     position: absolute
     width: auto
     top: 0
-    padding-top: 5px
     overflow: hidden
+    +iphone-style-label
+  +iphone-style-visual-container
 
 =iphone-style-label-on
   color: #fff
-  background: image-url("#{$iphone-style-images-path}/on.png") no-repeat
+  @if $iphone-style-images-path != ''
+    background: image-url("#{$iphone-style-images-path}/on.png") no-repeat
   text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.6)
   left: 0
   padding-top: 5px
@@ -74,13 +84,19 @@ $iphone-style-images-path: 'ios-checkboxes'
 
 =iphone-style-label-off
   color: #8B8B8B
-  background: image-url("#{$iphone-style-images-path}/off.png") no-repeat right 0
+  @if $iphone-style-images-path != ''
+    background: image-url("#{$iphone-style-images-path}/off.png") no-repeat right 0
   text-shadow: 0px 0px 2px rgba(255, 255, 255, 0.6)
   text-align: right
   right: 0
   span
     padding-right: 8px
 
+
+=iphone-style-visual-handle
+  @if $iphone-style-images-path != ''
+    background: image-url("#{$iphone-style-images-path}/slider_left.png") no-repeat
+  padding-left: 3px
 =iphone-style-handle
   display: block
   height: $iphone-style-height
@@ -89,16 +105,22 @@ $iphone-style-images-path: 'ios-checkboxes'
   top: 0
   left: 0
   width: 0
-  background: image-url("#{$iphone-style-images-path}/slider_left.png") no-repeat
-  padding-left: 3px
+  +iphone-style-visual-handle
 
+
+=iphone-style-visual-handle-right
+  padding-right: 3px
+  @if $iphone-style-images-path != ''
+    background: image-url("#{$iphone-style-images-path}/slider_right.png") no-repeat right 0
 =iphone-style-handle-right
   height: 100%
   width: 100%
-  padding-right: 3px
-  background: image-url("#{$iphone-style-images-path}/slider_right.png") no-repeat right 0
+  +iphone-style-visual-handle-right
 
+=iphone-style-visual-handle-center
+  @if $iphone-style-images-path != ''
+    background: image-url("#{$iphone-style-images-path}/slider_center.png")
 =iphone-style-handle-center
   height: 100%
   width: 100%
-  background: image-url("#{$iphone-style-images-path}/slider_center.png")
+  +iphone-style-visual-handle-center
