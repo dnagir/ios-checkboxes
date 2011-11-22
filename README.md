@@ -90,8 +90,9 @@ slider_right.png
 Advanced
 ----------------------------------------
 
-If overriding existing variables doesn't work for you, then you can customise using the hooks provided.
-For example, this creates the iOS 5 On/Off buttons (round ones) and use no images whatsoever.
+If overriding existing variables doesn't work for you and you don't want to write everything from scratch,
+then you can customise using the hooks provided.
+For example, this creates the iOS 5 On/Off buttons (round ones) and uses no images whatsoever.
 
 ```sass
 @import "compass/css3/images"
