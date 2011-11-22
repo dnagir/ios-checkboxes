@@ -1,3 +1,8 @@
+0.1.3 - Tue 22 Nov 2011
+========================================
+- Ability to customise using SASS mixins as hooks
+- Allow to remove the variable value altoether by giving it an empty string (`$iphone-style-images-path: ''`)
+
 0.1.2 - Mon 21 Nov 2011
 ========================================
 - Customise the images, sizes etc via SASS
