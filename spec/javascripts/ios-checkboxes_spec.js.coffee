@@ -8,9 +8,25 @@ describe "iOS Checkboxes", ->
     check.iphoneStyle()
     check.parent()
 
+  simulateSwitch = (container) ->
+    # This sends the up/down events to the element simulating that the button is pressed
+    container.trigger $.Event 'mousedown', pageX: 1
+    container.trigger $.Event 'mouseup', pageX: 1
 
   it "should have jQuery extensions", ->
     expect(jQuery.fn.iphoneStyle).toBeTruthy()
+
+  it "should be able to switch with mouse", ->
+    container   = iphonify()
+    input       = container.find ':checkbox'
+    initialVal  = input.prop 'checked'
+
+    simulateSwitch container
+    expect( input.prop 'checked' ).toBe not initialVal
+
+    simulateSwitch container
+    expect( input.prop 'checked' ).toBe initialVal
+
 
   it "should apply css classes to the on/off button", ->
     wrap = iphonify()
