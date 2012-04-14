@@ -53,7 +53,7 @@ Basic
 
 If the defaut stylesheet doesn't fit your design, you can customize it.
 
-Add a `.css.sass` file to your application and requer it.
+Add a `.css.sass` file to your application and require it.
 The basic example may look like this:
 
 ```sass
