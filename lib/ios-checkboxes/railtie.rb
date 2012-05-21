@@ -1,5 +1,4 @@
 require 'sass-rails'
-require 'compass'
 
 module IosCheckboxes
   class Railtie < ::Rails::Railtie

@@ -1,4 +1,7 @@
-@import "compass/css3/opacity"
+@mixin ios-opacity($opacity)
+  opacity: $opacity
+  // Borrowed from compass: https://github.com/chriseppstein/compass/blob/stable/frameworks/compass/stylesheets/compass/css3/_opacity.scss
+  filter: unquote("progid:DXImageTransform.Microsoft.Alpha(Opacity=#{round($opacity * 100)})")
 
 
 $iphone-style-mode: "cross-browser"
@@ -37,7 +40,7 @@ $iphone-style-images-path: 'ios-checkboxes'
   -khtml-user-select: none
 
 =iphone-style-disabled
-  +opacity(0.5)
+  +ios-opacity(0.5)
 
 =iphone-style-label
   padding-top: 5px
@@ -54,7 +57,7 @@ $iphone-style-images-path: 'ios-checkboxes'
     position: absolute
     top: 5px
     left: 30px
-    +opacity(0)
+    +ios-opacity(0)
   label
     white-space: nowrap
     @if $iphone-style-font-size != ''
