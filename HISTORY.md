@@ -1,3 +1,11 @@
+0.2.1 - Fri 25 May 2012
+========================================
+- Updated to support Rails 3.2
+- No dependency on compass
+
+
+... TODO: add missing ...
+
 0.1.3 - Tue 22 Nov 2011
 ========================================
 - Ability to customise using SASS mixins as hooks
